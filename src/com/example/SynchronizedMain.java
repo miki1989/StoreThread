@@ -1,0 +1,21 @@
+package com.example;
+
+public class SynchronizedMain {
+    public static void main(String[] args) {
+
+        Store store = Store.getInstance();
+        store.addShirt(new Shirt("1", "Polo", "Rainbow", "Large"));
+        store.addShirt(new Shirt("2", "Jeans", "Black", "Small"));
+        store.addShirt(new Shirt("3", "Blouse", "Red", "Medium"));
+
+        PracticeThread p1 = new PracticeThread();
+        PracticeThread p2 = new PracticeThread();
+        PracticeThread p3 = new PracticeThread();
+        PracticeThread p4 = new PracticeThread();
+
+        p1.start();
+        p2.start();
+        p3.start();
+        p4.start();
+    }
+}
